@@ -31,6 +31,9 @@ rerank:
     - "DreamO: A Unified Framework for Image Customization"
     - "LLaVA Needs More Knowledge: Retrieval Augmented Natural Language Generation with Knowledge Graph for Explaining Thoracic Pathologies"
     - "Unchecked and Overlooked: Addressing the Checkbox Blind Spot in Large Language Models with CheckboxQA"
+    - "The Bitter Lesson Learned from 2,000+ Multilingual Benchmarks"
+    - "A Comprehensive Survey in LLM(-Agent) Full Stack Safety: Data, Training and Deployment"
+    - "Unchecked and Overlooked: Addressing the Checkbox Blind Spot in Large Language Models with CheckboxQA"
   # embedding_json: ./configs/score_proj_embedding.json
 
 sources:
