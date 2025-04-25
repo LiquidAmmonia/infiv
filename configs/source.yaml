@@ -56,15 +56,30 @@ sources:
     # - func: infiv.spiders.bioxriv.get_info
     #   url: "https://www.biorxiv.org/collection/bioinformatics"
     #   subject: "paper"
-    - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
-      url: "http://localhost:1200/papers/arxiv/cs.CV?limit=500"
+
+    ## daily arxiv update
+    # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
+    #   url: "http://localhost:1200/papers/arxiv/cs.CV?limit=500"
+    #   subject: "paper"
+    # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
+    #   url: "http://localhost:1200/papers/arxiv/cs.CL?limit=500"
+    #   subject: "paper"
+    # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
+    #   url: "http://localhost:1200/papers/arxiv/cs.RO?limit=500"
+    #   subject: "paper RO"
+    
+    # spider for arxiv from arxiv api
+    # support: expired_date but with time lagging ~1d
+    - func: infiv.spiders.arxiv.get_info
+      url: cs.CV
       subject: "paper"
-    - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
-      url: "http://localhost:1200/papers/arxiv/cs.CL?limit=500"
+    - func: infiv.spiders.arxiv.get_info
+      url: cs.CL
       subject: "paper"
-    - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
-      url: "http://localhost:1200/papers/arxiv/cs.RO?limit=500"
-      subject: "paper RO"
+    - func: infiv.spiders.arxiv.get_info
+      url: cs.RO
+      subject: "paper"
+
     # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
     #   url: "http://localhost:1200/papers/arxiv/cs.AI?limit=500"
     #   subject: paper
