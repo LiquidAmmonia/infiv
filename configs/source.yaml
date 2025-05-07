@@ -10,6 +10,7 @@ rerank:
     - "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?"
     - "Chain-of-thought prompting elicits reasoning in large language models"
     - "What’s behind ppo’s collapse in long-cot? value optimization holds the secret"
+    - "TTRL: Test-Time Reinforcement Learning"
   dislikes:
     - "RobustEMD: Domain Robust Matching for Cross-domain Few-shot Medical Image Segmentation"
     - "Semantic Segmentation of Unmanned Aerial Vehicle Remote Sensing Images using SegFormer"
@@ -44,6 +45,16 @@ rerank:
     - "Cooperative Speech, Semantic Competence, and AI"
     - "Reflexive Prompt Engineering: A Framework for Responsible Prompt Engineering and Interaction Design"
     - "Transformers for Complex Query Answering over Knowledge Hypergraphs"
+    - "博士申请 | 澳门大学计算机系郑哲东老师课题组招收多模态方向全奖博士生"
+    - "AMD AI PC大赛重磅来袭！13万奖金池，NPU算力免费用，速来组队瓜分奖金！"
+    - "博士申请 | 中佛罗里达大学计算机系尚玉章老师课题组招收人工智能全奖博士/博后"
+    - "导师放养，偷偷发了顶会。。。"
+    - "AAAI 2025 | 开放集跨网络节点分类！海大团队提出排除未知类别的对抗图域对齐"
+    - "北京/杭州内推 | 阿里通义实验室对话智能团队招聘LLM多轮对话方向研究实习生"
+    - "ACM MM 2025 LGM3A研讨会征稿：探索大模型与多模态的融合创新"
+    - "北京/杭州内推 | 淘天集团直播AIGC团队招聘多模态内容理解方向算法实习生"
+    - "博士申请 | 西湖大学吴泰霖老师招收AI for Science方向博士/博后/实习生"
+    - "陶哲轩：感谢ChatGPT，4小时独立完成了一个开源项目"
   # embedding_json: ./configs/score_proj_embedding.json
 
 sources:
