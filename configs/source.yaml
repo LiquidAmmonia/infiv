@@ -55,6 +55,7 @@ rerank:
     - "北京/杭州内推 | 淘天集团直播AIGC团队招聘多模态内容理解方向算法实习生"
     - "博士申请 | 西湖大学吴泰霖老师招收AI for Science方向博士/博后/实习生"
     - "陶哲轩：感谢ChatGPT，4小时独立完成了一个开源项目"
+    - "因为盲审没过，被延毕了……"
   # embedding_json: ./configs/score_proj_embedding.json
 
 sources:
