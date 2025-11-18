@@ -8,7 +8,7 @@ on:
         description: 'Optional expired datetime(format "YYYY/MM/DD HH:MM" in UTC), if not set it would be yesterday'
         required: false
 permissions:
-  contents: read
+  contents: write  # allow writing to repository
   issues: write  # allow writing to issue
   pages: write
   id-token: write
@@ -80,6 +80,14 @@ jobs:
       env:
         EXPIRED_DAYTIME: ${{ env.EXPIRED_DAYTIME }}
       run: python -m infiv build --use_embed
+    - name: generate history index
+      run: python -m infiv gen_history_index
+    - name: commit and push history
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add history/ index.md
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update daily report $(date +'%Y-%m-%d')" && git push)
     - name: to myst pages
       run:  myst build --html
     - uses: actions/upload-artifact@v4

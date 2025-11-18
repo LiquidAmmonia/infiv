@@ -29,6 +29,10 @@ def parse_args():
     sub_parser = sub_parsers.add_parser(
         "md2json", help="convert the markdown file to json file"
     )
+    # subcommand - gen_history_index - used to generate history index page
+    sub_parser = sub_parsers.add_parser(
+        "gen_history_index", help="generate history index page"
+    )
     return parser.parse_args()
 
 
@@ -45,6 +49,9 @@ def main(args: argparse.Namespace):
     elif args.command == "md2json":
         from infiv.md_to_json import main
         main(args)
+    elif args.command == "gen_history_index":
+        from infiv.generate_history_index import main
+        main()
     
 
 

@@ -335,10 +335,23 @@ def main(args: "argparse.Namespace"):
     # TODO:
 
     ## 5. dump
+    markdown_content = "\n\n".join(md_sections)
+    
+    # Save current output
     with open("output.md", "wt") as f:
-        f.write("\n\n".join(md_sections))
+        f.write(markdown_content)
 
     logger.info("Dump result markdown at output.md")
+    
+    # Save to history directory with date
+    history_dir = "history"
+    os.makedirs(history_dir, exist_ok=True)
+    today = datetime.now().strftime("%Y-%m-%d")
+    history_file = os.path.join(history_dir, f"{today}.md")
+    with open(history_file, "wt") as f:
+        f.write(markdown_content)
+    
+    logger.info(f"Saved history markdown at {history_file}")
 
 
 if __name__ == "__main__":
