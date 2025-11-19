@@ -1,5 +1,7 @@
 # Historical Daily News Archive
 
-This page will be automatically generated with links to all historical daily reports.
+Total reports: 1
 
-Run `python -m infiv gen_history_index` to generate the index after creating history files.
+## Archive by Date
+
+- [2025-11-19 (Wednesday)](history/2025-11-19.md)
