@@ -1,9 +1,10 @@
 # Historical Daily News Archive
 
-Total reports: 8
+Total reports: 9
 
 ## Archive by Date
 
+- [2025-11-27 (Thursday)](history/2025-11-27.md)
 - [2025-11-26 (Wednesday)](history/2025-11-26.md)
 - [2025-11-25 (Tuesday)](history/2025-11-25.md)
 - [2025-11-24 (Monday)](history/2025-11-24.md)
