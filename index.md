@@ -1,9 +1,10 @@
 # Historical Daily News Archive
 
-Total reports: 47
+Total reports: 48
 
 ## Archive by Date
 
+- [2026-01-05 (Monday)](history/2026-01-05.md)
 - [2026-01-04 (Sunday)](history/2026-01-04.md)
 - [2026-01-03 (Saturday)](history/2026-01-03.md)
 - [2026-01-02 (Friday)](history/2026-01-02.md)
