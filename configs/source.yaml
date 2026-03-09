@@ -100,9 +100,9 @@ sources:
     - func: infiv.spiders.arxiv.get_info
       url: cs.CL
       subject: "paper"
-    # - func: infiv.spiders.arxiv.get_info
-    #   url: cs.RO
-    #   subject: "paper"
+    - func: infiv.spiders.arxiv.get_info
+      url: cs.RO
+      subject: "paper"
 
     # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
     #   url: "http://localhost:1200/papers/arxiv/cs.CV?limit=500"
