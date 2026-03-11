@@ -11,11 +11,7 @@ rerank:
     - "Chain-of-thought prompting elicits reasoning in large language models"
     - "What’s behind ppo’s collapse in long-cot? value optimization holds the secret"
     - "TTRL: Test-Time Reinforcement Learning"
-    - "AlphaEvolve: A coding agent for scientific and algorithmic discovery"
-    - "Mining Hidden Thoughts from Texts: Evaluating Continual Pretraining with Synthetic Data for LLM Reasoning"
-    - "Scaling Laws of Synthetic Data for Language Models"
-    - "Rephrasing the Web: A Recipe for Compute and Data-Efficient Language Modeling"
-    - "Video models are zero-shot learners and reasoners"
+    - "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning"
 
   dislikes:
     - "RobustEMD: Domain Robust Matching for Cross-domain Few-shot Medical Image Segmentation"
