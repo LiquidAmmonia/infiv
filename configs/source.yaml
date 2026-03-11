@@ -1,5 +1,7 @@
 rerank:
   likes:
+    - "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning"
+    - "OpenClaw-RL: Train Any Agent Simply by Talking"
     - "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
     - "QWEN2.5-MATH TECHNICAL REPORT: TOWARD MATHEMATICAL EXPERT MODEL VIA SELF-IMPROVEMENT"
     - "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
@@ -11,7 +13,6 @@ rerank:
     - "Chain-of-thought prompting elicits reasoning in large language models"
     - "What’s behind ppo’s collapse in long-cot? value optimization holds the secret"
     - "TTRL: Test-Time Reinforcement Learning"
-    - "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning"
 
   dislikes:
     - "RobustEMD: Domain Robust Matching for Cross-domain Few-shot Medical Image Segmentation"
