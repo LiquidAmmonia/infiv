@@ -1,5 +1,7 @@
 rerank:
   likes:
+    - "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning"
+    - "OpenClaw-RL: Train Any Agent Simply by Talking"
     - "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
     - "QWEN2.5-MATH TECHNICAL REPORT: TOWARD MATHEMATICAL EXPERT MODEL VIA SELF-IMPROVEMENT"
     - "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
@@ -11,11 +13,6 @@ rerank:
     - "Chain-of-thought prompting elicits reasoning in large language models"
     - "What’s behind ppo’s collapse in long-cot? value optimization holds the secret"
     - "TTRL: Test-Time Reinforcement Learning"
-    - "AlphaEvolve: A coding agent for scientific and algorithmic discovery"
-    - "Mining Hidden Thoughts from Texts: Evaluating Continual Pretraining with Synthetic Data for LLM Reasoning"
-    - "Scaling Laws of Synthetic Data for Language Models"
-    - "Rephrasing the Web: A Recipe for Compute and Data-Efficient Language Modeling"
-    - "Video models are zero-shot learners and reasoners"
 
   dislikes:
     - "RobustEMD: Domain Robust Matching for Cross-domain Few-shot Medical Image Segmentation"
@@ -113,12 +110,18 @@ sources:
     # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
     #   url: "http://localhost:1200/papers/arxiv/cs.RO?limit=500"
     #   subject: paper
-    # - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
-    #   url: "http://localhost:1200/papers/arxiv/cs.AI?limit=500"
-    #   subject: paper
+    - func: infiv.spiders.rsshub.cool_paper_arxiv.get_info
+      url: "http://localhost:1200/papers/arxiv/cs.AI?limit=500"
+      subject: paper
     # - func: infiv.spiders.rsshub.default.get_info
     #   url: "http://localhost:1200/nature/research"
     #   subject: paper
     # - func: infiv.spiders.rsshub.default.get_info
     #   url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml"
     #   subject: coding
+    - func: infiv.spiders.rsshub.default.get_info
+      url: "https://wechat2rss.xlab.app/feed/51e92aad2728acdd1fda7314be32b16639353001.xml"  # 机器之心
+      subject: "feed"
+    - func: infiv.spiders.rsshub.default.get_info
+      url: "https://wechat2rss.xlab.app/feed/3be891c2f4e526629ab055a297cc2cd6c1f0a563.xml"  # paper weekly
+      subject: "feed"
