@@ -6,87 +6,133 @@
   <title>Daily News Archive</title>
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Material Design 3 */
 :root {
-  --bg: #f0f2f5;
-  --card-bg: #fff;
-  --text: #1a202c;
-  --text-muted: #718096;
-  --border: #e2e8f0;
-  --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
-  --radius: 12px;
+  --md-bg:        #f4f6fb;
+  --md-surface:   #ffffff;
+  --md-surface-v: #eef1f8;
+  --md-outline:   #c4c8d4;
+  --md-primary:   #1a6fe8;
+  --md-on-sv:     #43475a;
+  --md-on-surf:   #191c24;
+  --elev-1: 0 1px 2px rgba(0,0,0,0.08), 0 1px 3px 1px rgba(0,0,0,0.06);
+  --elev-3: 0 4px 8px 3px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.10);
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-sm:   8px;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Google Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--md-bg);
+  color: var(--md-on-surf);
   min-height: 100vh;
 }
+/* Top App Bar */
 .site-header {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-  color: #fff;
-  padding: 2.5rem 1.5rem 2rem;
+  background: #0d47a1;
+  color: #e8eeff;
+  padding: 2.2rem 1.5rem 1.8rem;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.20);
 }
-.site-header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
-.site-header p  { margin-top: 0.5rem; opacity: 0.65; font-size: 0.9rem; }
+.site-header h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #fff;
+}
+.site-header p { margin-top: 0.45rem; opacity: 0.55; font-size: 0.85rem; }
 .container {
-  max-width: 860px;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
-.year-group { margin-bottom: 2.5rem; }
+.year-group { margin-bottom: 2.25rem; }
+/* MD3 section label */
 .year-heading {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #3b82f6;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 3px solid #3b82f6;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--md-primary);
+  margin-bottom: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--md-surface);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--md-primary);
+  box-shadow: var(--elev-1);
 }
 .entry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 0.75rem;
 }
+/* MD3 Elevated Card */
 .entry-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  padding: 1rem 1.1rem;
+  background: var(--md-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--elev-1);
+  padding: 1rem 1.1rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  transition: box-shadow 0.2s, transform 0.2s;
+  gap: 0.4rem;
+  transition: box-shadow 0.22s, transform 0.22s;
 }
-.entry-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.11); transform: translateY(-2px); }
-.entry-date { font-size: 1rem; font-weight: 700; }
-.entry-weekday { font-size: 0.78rem; color: var(--text-muted); }
-.entry-links { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+.entry-card:hover {
+  box-shadow: var(--elev-3);
+  transform: translateY(-2px);
+}
+.entry-date {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--md-on-surf);
+  letter-spacing: 0.1px;
+}
+.entry-weekday {
+  font-size: 0.74rem;
+  color: var(--md-on-sv);
+  letter-spacing: 0.2px;
+}
+.entry-links { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.2rem; }
+/* MD3 Tonal Button */
 .entry-link {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  padding: 0.18rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: filter 0.15s;
+  letter-spacing: 0.25px;
+  transition: filter 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
-.entry-link:hover { filter: brightness(0.88); }
-.link-html { color: #1d4ed8; background: #eff6ff; }
-.link-md   { color: #374151; background: #f1f5f9; }
-.no-data { text-align: center; padding: 4rem; color: var(--text-muted); }
-.site-footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.entry-link:hover { filter: brightness(0.90); box-shadow: 0 2px 4px rgba(0,0,0,0.14); }
+.link-html { color: #1344a0; background: #e3eeff; }
+.link-md   { color: #3a3f52; background: var(--md-surface-v); }
+.no-data   { text-align: center; padding: 4rem; color: var(--md-on-sv); }
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--md-on-sv);
+  font-size: 0.79rem;
+  border-top: 1px solid var(--md-outline);
+  margin-top: 2rem;
+  background: var(--md-surface);
+}
 @media (max-width: 480px) { .entry-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
 <header class="site-header">
-  <h1>📚 Daily News Archive</h1>
-  <p>共 5 份报告 &nbsp;·&nbsp; 更新于 2026-03-17 14:09:12</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+    <h1>📚 Daily News Archive</h1>
+    <a href="./" style="padding:0.38rem 1rem;border-radius:999px;background:rgba(255,255,255,0.15);color:#fff;font-size:0.82rem;font-weight:700;text-decoration:none;white-space:nowrap;">📰 最新报告</a>
+  </div>
+  <p style="margin-top:0.5rem;">共 8 份报告 &nbsp;·&nbsp; 更新于 2026-03-17 14:53:41</p>
 </header>
 <main class="container">
-  <div class="year-group"><div class="year-heading">2025</div><div class="entry-grid"><div class="entry-card"><div class="entry-date">2025-11-23</div><div class="entry-weekday">周日</div><div class="entry-links"><a href="history/2025-11-23.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-22</div><div class="entry-weekday">周六</div><div class="entry-links"><a href="history/2025-11-22.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-21</div><div class="entry-weekday">周五</div><div class="entry-links"><a href="history/2025-11-21.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-20</div><div class="entry-weekday">周四</div><div class="entry-links"><a href="history/2025-11-20.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-19</div><div class="entry-weekday">周三</div><div class="entry-links"><a href="history/2025-11-19.md" class="entry-link link-md">Markdown</a></div></div></div></div>
+  <div class="year-group"><div class="year-heading">2026</div><div class="entry-grid"><div class="entry-card"><div class="entry-date">2026-03-17</div><div class="entry-weekday">周二</div><div class="entry-links"><a href="history/2026-03-17.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2026-03-16</div><div class="entry-weekday">周一</div><div class="entry-links"><a href="history/2026-03-16.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2026-03-09</div><div class="entry-weekday">周一</div><div class="entry-links"><a href="history/2026-03-09.md" class="entry-link link-md">Markdown</a></div></div></div></div>
+<div class="year-group"><div class="year-heading">2025</div><div class="entry-grid"><div class="entry-card"><div class="entry-date">2025-11-23</div><div class="entry-weekday">周日</div><div class="entry-links"><a href="history/2025-11-23.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-22</div><div class="entry-weekday">周六</div><div class="entry-links"><a href="history/2025-11-22.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-21</div><div class="entry-weekday">周五</div><div class="entry-links"><a href="history/2025-11-21.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-20</div><div class="entry-weekday">周四</div><div class="entry-links"><a href="history/2025-11-20.md" class="entry-link link-md">Markdown</a></div></div><div class="entry-card"><div class="entry-date">2025-11-19</div><div class="entry-weekday">周三</div><div class="entry-links"><a href="history/2025-11-19.md" class="entry-link link-md">Markdown</a></div></div></div></div>
 </main>
 <footer class="site-footer">Built by <strong>infiv</strong></footer>
 </body>
