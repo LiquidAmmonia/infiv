@@ -196,6 +196,32 @@ def main(args: "argparse.Namespace"):
             item for item in flattened_results if item["pub_datetime"] > expired_datetime
         ]
 
+    ## deduplicate: same paper may be fetched from multiple sources/categories
+    ## use the primary link URL as key; fall back to normalized title
+    seen_keys: set = set()
+    deduped_results = []
+    for item in flattened_results:
+        links = item.get("links", [])
+        if links:
+            first_link = links[0]
+            if isinstance(first_link, dict):
+                key = next(iter(first_link.values()), "")
+            else:
+                key = str(first_link)
+        else:
+            key = ""
+        if not key:
+            key = item.get("title", "").strip().lower()
+        if key and key not in seen_keys:
+            seen_keys.add(key)
+            deduped_results.append(item)
+        elif not key:
+            deduped_results.append(item)
+    n_dupes = len(flattened_results) - len(deduped_results)
+    if n_dupes:
+        logger.info(f"Removed {n_dupes} duplicate item(s)")
+    flattened_results = deduped_results
+
     ## 2. get embedding from google gemini
     if not getattr(args, "use_embed", False):
         embeddings = None
