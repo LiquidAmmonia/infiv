@@ -291,12 +291,15 @@ def main(args: "argparse.Namespace"):
     ## 3. output markdown
     ### TODO: dump to jinja2 template markdown
     n = len(flattened_results)
+    generated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     ## result md
     md_sections = [
-        f"# Daily News\n\nGenerated at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} \n\nWe have {n} news from different sources."
+        f"# Daily News\n\nGenerated at {generated_at} \n\nWe have {n} news from different sources."
     ]
     subject_group_indices = list(range(n))
     subject_group_indices.sort(key=lambda i: flattened_results[i]["subject"])
+    # ordered_items collects items in the final display order for HTML generation
+    ordered_items = []
     for subject, indices in itertools.groupby(
         subject_group_indices, key=lambda i: flattened_results[i]["subject"]
     ):
@@ -306,6 +309,7 @@ def main(args: "argparse.Namespace"):
         md_sections.append(f"## {subject}")
         for index in indices:
             item = flattened_results[index]
+            ordered_items.append(item)
             section_content = f"### {item['title']}"
             ## insert links
             section_content += "\n"
@@ -340,21 +344,41 @@ def main(args: "argparse.Namespace"):
     ## 5. dump
     markdown_content = "\n\n".join(md_sections)
     
-    # Save current output
-    with open("output.md", "wt") as f:
-        f.write(markdown_content)
-
-    logger.info("Dump result markdown at output.md")
-    
-    # Save to history directory with date
     history_dir = "history"
     os.makedirs(history_dir, exist_ok=True)
     today = datetime.now().strftime("%Y-%m-%d")
-    history_file = os.path.join(history_dir, f"{today}.md")
-    with open(history_file, "wt") as f:
+
+    # Save markdown
+    with open("output.md", "wt") as f:
         f.write(markdown_content)
-    
-    logger.info(f"Saved history markdown at {history_file}")
+    logger.info("Dump result markdown at output.md")
+
+    history_md_file = os.path.join(history_dir, f"{today}.md")
+    with open(history_md_file, "wt") as f:
+        f.write(markdown_content)
+    logger.info(f"Saved history markdown at {history_md_file}")
+
+    ## 6. generate HTML
+    from infiv.html_builder import build_html
+    page_title = f"Daily News - {today}"
+    # output.html ends up as index.html (root), archives is at same level
+    html_content = build_html(
+        ordered_items, title=page_title, generated_at=generated_at,
+        archives_url="archives.html",
+    )
+    with open("output.html", "wt", encoding="utf-8") as f:
+        f.write(html_content)
+    logger.info("Dump result HTML at output.html")
+
+    # history pages sit one level deeper, so archives is one level up
+    history_html_content = build_html(
+        ordered_items, title=page_title, generated_at=generated_at,
+        archives_url="../archives.html",
+    )
+    history_html_file = os.path.join(history_dir, f"{today}.html")
+    with open(history_html_file, "wt", encoding="utf-8") as f:
+        f.write(history_html_content)
+    logger.info(f"Saved history HTML at {history_html_file}")
 
 
 if __name__ == "__main__":
