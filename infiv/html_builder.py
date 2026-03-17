@@ -19,20 +19,28 @@ if TYPE_CHECKING:
 
 # ── Link type → display style ────────────────────────────────────────────────
 _LINK_STYLES: dict = {
-    "arxiv":    {"label": "arXiv",    "color": "#b54a00", "bg": "#fff1ec"},
-    "html":     {"label": "HTML",     "color": "#1d4ed8", "bg": "#eff6ff"},
-    "pdf":      {"label": "PDF",      "color": "#b91c1c", "bg": "#fef2f2"},
-    "kimi":     {"label": "Kimi",     "color": "#6d28d9", "bg": "#f5f3ff"},
-    "source":   {"label": "Source",   "color": "#374151", "bg": "#f1f5f9"},
-    "bilibili": {"label": "bilibili", "color": "#d65278", "bg": "#fff0f6"},
-    "zhihu":    {"label": "知乎",      "color": "#007fff", "bg": "#eff6ff"},
-    "cooler":   {"label": "CoolPaper","color": "#0d9488", "bg": "#f0fdfa"},
+    "arxiv":    {"label": "arXiv",    "color": "#9a3412", "bg": "#ffedd5"},  # orange-800 / orange-100
+    "html":     {"label": "HTML",     "color": "#1d4ed8", "bg": "#dbeafe"},  # blue-700 / blue-100
+    "pdf":      {"label": "PDF",      "color": "#b91c1c", "bg": "#fee2e2"},  # red-700 / red-100
+    "kimi":     {"label": "Kimi",     "color": "#6d28d9", "bg": "#ede9fe"},  # violet-700 / violet-100
+    "source":   {"label": "Source",   "color": "#475569", "bg": "#f1f5f9"},  # slate-600 / slate-100
+    "bilibili": {"label": "bilibili", "color": "#be185d", "bg": "#fce7f3"},  # pink-700 / pink-100
+    "zhihu":    {"label": "知乎",      "color": "#1d4ed8", "bg": "#dbeafe"},  # blue-700 / blue-100
+    "cooler":   {"label": "CoolPaper","color": "#0e7490", "bg": "#cffafe"},  # cyan-700 / cyan-100
 }
 
 # Palette for subject section accent colours (cycles if more subjects than colours)
 _SUBJECT_COLORS = [
-    "#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6",
-    "#ec4899", "#06b6d4", "#84cc16", "#f97316", "#6366f1",
+    "#4f46e5",  # indigo-600
+    "#0891b2",  # cyan-600
+    "#059669",  # emerald-600
+    "#d97706",  # amber-600
+    "#dc2626",  # red-600
+    "#7c3aed",  # violet-600
+    "#db2777",  # pink-600
+    "#0284c7",  # sky-600
+    "#16a34a",  # green-600
+    "#ea580c",  # orange-600
 ]
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
@@ -46,7 +54,7 @@ _CSS = """
   --md-surface:      #ffffff;      /* surface */
   --md-surface-v:    #eef1f8;      /* surface-variant */
   --md-outline:      #c4c8d4;      /* outline-variant */
-  --md-primary:      #1a6fe8;      /* primary (blue-700ish) */
+  --md-primary:      #4f46e5;      /* primary (indigo-600) */
   --md-primary-c:    #ffffff;      /* on-primary */
   --md-on-surface:   #191c24;      /* on-surface */
   --md-on-sv:        #43475a;      /* on-surface-variant */
@@ -71,8 +79,8 @@ body {
 /* ─── Top App Bar (MD3) ───────────────────────── */
 .site-header {
   /* MD3 primary container */
-  background: #0d47a1;             /* deep blue — Material blue 900 */
-  color: #e8eeff;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #e0e7ff;
   padding: 0.9rem 1.5rem;
   position: sticky;
   top: 0;
@@ -281,8 +289,8 @@ body {
   color: var(--md-on-sv);
 }
 .badge-tag {
-  background: #e3eeff;
-  color: #1344a0;
+  background: #e0e7ff;
+  color: #3730a3;
 }
 
 /* MD3 Tonal Buttons for links */
