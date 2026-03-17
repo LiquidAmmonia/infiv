@@ -97,6 +97,7 @@ jobs:
         # served as-is (bypassing MyST rendering) under the same domain.
         mkdir -p _build/html/history
         cp history/*.html _build/html/history/ 2>/dev/null || true
+        cp history/*.md   _build/html/history/ 2>/dev/null || true
         cp output.html _build/html/daily.html 2>/dev/null || true
         cp index.html _build/html/archives.html 2>/dev/null || true
         # Make today's report the default landing page
