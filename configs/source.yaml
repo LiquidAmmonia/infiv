@@ -13,6 +13,7 @@ rerank:
     - "Chain-of-thought prompting elicits reasoning in large language models"
     - "What’s behind ppo’s collapse in long-cot? value optimization holds the secret"
     - "TTRL: Test-Time Reinforcement Learning"
+    - "SAGE: Multi-Agent Self-Evolution for LLM Reasoning"
 
   dislikes:
     - "RobustEMD: Domain Robust Matching for Cross-domain Few-shot Medical Image Segmentation"
