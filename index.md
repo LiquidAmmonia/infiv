@@ -1,9 +1,10 @@
 # Historical Daily News Archive
 
-Total reports: 195
+Total reports: 196
 
 ## Archive by Date
 
+- [2026-09-23 (周三)](history/2026-09-23.html)
 - [2026-09-22 (周二)](history/2026-09-22.html)
 - [2026-09-21 (周一)](history/2026-09-21.html)
 - [2026-09-20 (周日)](history/2026-09-20.html)
